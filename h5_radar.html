@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width ,minimum-scale=1,maximum-scale=1" >
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/H5ComponentBase.js"></script>
+    <link rel="stylesheet" href="css/H5ComponentBase.css">
+    <script src="js/h5_radar.js"></script>
+    <link rel="stylesheet" href="css/h5_radar.css">
+    <title>雷达图</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font-size:15px;
+        }
+        body{
+            background-color: #000;
+        }
+        .iphone{
+            width:340px;
+            height:540px;
+            background-color:#fff;
+            position:absolute;
+            left:50%;
+            top:50%;
+            margin:-270px 0 0 -170px;
+        }
+    </style>
+</head>
+<body>
+<div class="iphone">
+
+</div>
+<script>
+    var cfg={
+        "type":"radar",
+            "width":"400",
+            "height":"400",
+            "css":{
+            top:200,
+//           opacity:0
+        },
+        //  "text":"text",
+//        animateIn:{
+//            opacity:1,
+//            top:100
+//        },
+//        animateOut:{
+//            opacity:0,
+//            top:200
+//        },
+        data:[
+            [ 'java',.4,'#f00'],
+            ['HTML',.2],
+            [ 'CSS3',.1],
+            [ 'HTML',.2],
+            [ 'jque',.35],
+            [ 'Boot',.05],
+            [ 'Angu',.09]
+        ],
+            "center":true
+    };
+    var h5=new h5_radar(cfg,name);      //调用自定义的全局变量cfg,调用在js中定义的方法
+    $(".iphone").append(h5);
+    var leave=true;
+    $('body').click(function(){
+        console.log(3);
+        leave=!leave;
+        $('.h5_component').trigger(leave ? 'onLeave':'onLoad')
+    })
+
+</script>
+</body>
+</html>

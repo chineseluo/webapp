@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width ,initial-scale=1">
+    <title>webapp</title>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.fullPage.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+.content{
+    width:50%;
+    height:20px;
+    margin-bottom: 20px;
+    background-color: #eee;
+}
+    </style>
+</head>
+<body>
+<div id="fullpage">
+    <div class="section content" id="page logo">第一屏</div>
+    <div class="section content" id="page f1">第二屏</div>
+    <div class="section content" id="page f2">
+        第三屏
+    </div>
+    <div class="section content" id="page f3">第四屏</div>
+</div>
+<script>
+    $("#fullpage").fullpage({
+"sectionsColor":["skyblue","blue","yellow","green"]
+    });
+    $(".content")
+</script>
+</body>
+</html>

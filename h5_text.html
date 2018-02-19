@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width ,minimum-scale=1,maximum-scale=1" >
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.fullPage.js"></script>
+    <script src="js/h5_text.js"></script>
+    <link rel="stylesheet" href="css/h5_text.css">
+    <script src="js/H5ComponentBase.js"></script>
+    <link rel="stylesheet" href="css/H5ComponentBase.css">
+    <title>h5_text_ccontent</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+<script>
+       //测试内容组织功能，以及fullpage内容切换以及组件切换
+    $(function () {
+        var h5=new H5();
+             h5.addpage('face')
+                    .addcomponent('logo',
+                        {text:'logo',
+                        width:400,
+                        height:100,
+                        css:{
+                        backgroundColor:'red',
+                            top:200,
+                            opacity:0
+                        },
+                        center:true,
+                            animateIn:{
+                            opacity:1
+                            },
+                            animateOut:{
+                                opacity:0
+                            }
+                    })
+                    .addcomponent('slogn',
+                        {text:'slogn',
+                            width:400,
+                            height:100,
+                            css:{
+                                backgroundColor:'red',
+                                top:350
+                            },
+                            center:true})
+            .addpage('desc')
+                   .addcomponent('caption',
+                       {text:'核心理念',
+                           width:400,
+                           height:100,
+                           css:{
+                               backgroundColor:'green',
+                               top:200
+                           },
+                           center:true
+                        })
+            .addpage('page_3')
+                    .addcomponent('captio',
+                        {text:'课程分布' ,
+                            width:400,
+                            height:100,
+                            css:{
+                                backgroundColor:'blue',
+                                top:200
+                            },
+                            center:true})
+            .loader();
+
+    })
+</script>
+</body>
+</html>

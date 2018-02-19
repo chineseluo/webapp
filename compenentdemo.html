@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width ,minimum-scale=1,maximum-scale=1" >
+    <title>componentdemo</title>
+    <style>
+*{
+    margin:0;
+    padding:0;
+    background-color: #000;
+    font-size:15px;
+}
+        .iphone{
+            width:340px;
+            height:540px;
+            background-color:#fff;
+            position:absolute;
+            left:50%;
+            top:50%;
+            margin:-270px 0 0 -170px;
+        }
+        .h5_component_base{
+             transition: all 1s;
+         }
+
+    </style>
+</head>
+<body>
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/H5ComponentBase.js"></script>
+<link rel="stylesheet" href="css/H5ComponentBase.css">
+<div class="iphone">
+
+</div>
+<script>
+var cfg={
+     "type":"base",
+    "width":"514",
+    "height":"306",
+    "css":{
+   bottom:0,
+        opacity:0
+    },
+    animateIn:{
+         bottom:80,
+        opacity:1
+    },
+    animateOut:{
+         bottom:0,
+        opacity:0
+    },
+    "center":true,
+    "bg":"img/p1_people.png"
+};
+var h5=new H5CompontentBase(cfg,name);      //调用自定义的全局变量cfg,调用在js中定义的方法
+$(".iphone").append(h5);
+var leave=true;
+$('body').click(function(){
+    leave=!leave;
+    $('.h5_component').trigger(leave ? 'onLeave':'onLoad')
+})
+</script>
+</body>
+</html>

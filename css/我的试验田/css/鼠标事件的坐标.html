@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>鼠标事件的坐标</title>
+  <style type="text/css">
+  
+  </style>
+ </head>
+ <body>
+  <script type="text/javascript">
+  document.onclick=function(e){
+	  var event=e||window.event;
+	  alert("可视区域坐标:x:"+event.clientX+"  y:"+event.clientY);
+	//  alert("页面区域坐标:x:"+event.pageX+"  y:"+event.pageY);
+	//  alert("屏幕区域坐标:x:"+event.screenX+"  y:"+event.screenY);
+  }
+  
+  </script>
+ </body>
+</html>

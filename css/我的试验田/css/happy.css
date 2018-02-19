@@ -1,0 +1,70 @@
+*{
+    margin:  0;
+    padding: 0;
+    list-style: none;//列表起始样式设置为无
+}
+
+body{
+    background: url("../image/background.jpg") no-repeat;//图片地址   不平铺
+    background-size: cover;//图片大小自适应
+}
+ul{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    margin-left: -100px;
+    transform-style: preserve-3d;
+    animation: sport 10s linear 0s infinite normal;
+}
+@keyframes sport {
+    from{
+        transform: rotateX(-10deg)  rotateY(0deg) ;
+    }
+    to{
+    transform:rotateX(-10deg)  rotateY(360deg);
+    /*}动画绕y轴旋转360°*/
+}
+ul img{
+    height: 200px;
+    width: 200px;
+    border: 5px solid #ff8f85;
+    box-sizing: border-box;//border-box盒子包含边框，padding-box盒子包含内边距
+}
+ul li{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+ul li:nth-child(1){
+    transform: rotateY(60deg) translateZ(188px);
+}
+ul li:nth-child(2){
+    transform: rotateY(120deg) translateZ(188px);
+}
+ul li:nth-child(3){
+    transform: rotateY(180deg) translateZ(188px);
+}
+ul li:nth-child(4){
+    transform: rotateY(240deg) translateZ(188px);
+}
+ul li:nth-child(5){
+    transform: rotateY(300deg) translateZ(188px);
+}
+ul li:nth-child(6){
+    transform: rotateY(360deg) translateZ(188px);
+}
+ul:hover {
+    animation-play-state: paused ;
+}
+ul:hover img{
+    opacity: 0.6;
+}
+li:hover img{
+    opacity: 1;
+}
+
+

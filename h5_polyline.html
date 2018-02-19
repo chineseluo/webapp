@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width ,minimum-scale=1,maximum-scale=1" >
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/H5ComponentBase.js"></script>
+    <link rel="stylesheet" href="css/H5ComponentBase.css">
+    <script src="js/h5_polyline.js"></script>
+    <link rel="stylesheet" href="css/h5_polyline.css">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font-size:15px;
+        }
+        body{
+            background-color: #000;
+        }
+        .iphone{
+            width:340px;
+            height:540px;
+            background-color:#fff;
+            position:absolute;
+            left:50%;
+            top:50%;
+            margin:-270px 0 0 -170px;
+        }
+    </style>
+</head>
+<body>
+<!--开发测试折线图-->
+<div class="iphone">
+
+</div>
+<script>
+    var cfg={
+        "type":"polyline",
+        "width":"530",
+        "height":"400",
+        "css":{
+            top:100,
+            opacity:0
+        },
+      //  "text":"text",
+        animateIn:{
+            opacity:1,
+            top:200
+        },
+        animateOut:{
+            opacity:0,
+            top:100
+        },
+        data:[
+            [ 'java',.4,'#AAAAAA'],
+            ['HTML',.2],
+            [ 'CSS3',.1],
+            [ 'HTML',.2],
+            [ 'jque',.35],
+            [ 'Boot',.05],
+            [ 'Angu',.09]
+        ],
+        "center":true
+    };
+    var h5=new h5_polyline(cfg,name);      //调用自定义的全局变量cfg,调用在js中定义的方法
+    $(".iphone").append(h5);
+    var leave=true;
+    $('body').click(function(){
+        console.log(3);
+        leave=!leave;
+        $('.h5_component').trigger(leave ? 'onLeave':'onLoad')
+    })
+
+</script>
+</body>
+</html>
